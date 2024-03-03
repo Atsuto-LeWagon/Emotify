@@ -10,7 +10,7 @@ from interface import regarding_spotify_interact
 from interface import about_us
 from interface import reset_instruction
 
-from face_detect_module.face_emotion_detector_DIY import extract_emotion
+from face_detect_module.face_emotion_detector import extract_emotion
 
 from playlist_module.generate_playlist import process_emotion, tailor_df
 from playlist_module.generate_playlist import generate_playlist, send_playlist_id
@@ -20,9 +20,10 @@ from interface.alternative_input_preproc import is_image, image_to_video, save_u
 #---------------------------------------------------
 #          PATHS AND OTHER VARIABLES
 #---------------------------------------------------
-
-#OUTPUT_VIDEO_PATH = os.environ.get("VIDEO_PATH")
-OUTPUT_VIDEO_PATH = st.secrets['VIDEO_PATH']
+# To run locally;
+OUTPUT_VIDEO_PATH = os.environ.get("VIDEO_PATH")
+# To run on Streamlit Cloud;
+#OUTPUT_VIDEO_PATH = st.secrets['VIDEO_PATH']
 duration = 10
 
 emotion_emoji = {
